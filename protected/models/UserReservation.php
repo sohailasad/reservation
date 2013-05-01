@@ -51,6 +51,7 @@ class UserReservation extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('passenger_name, phone_number, total_seats, reserve_seats, available_seats, reserve_seats_numbers, terminal_from_id, terminal_to_id, root_id, reserve_date_time, travel_date, travel_time', 'required'),
+                        array('phone_number, cnic_number','unique'),
 			array('passenger_id, total_seats, reserve_seats, available_seats, reserve_seats_numbers, terminal_from_id, terminal_to_id, bus_id', 'numerical', 'integerOnly'=>true),
 			array('passenger_name, phone_number, email, cnic_number', 'length', 'max'=>255),
 			array('root_id, reserve_date_time', 'length', 'max'=>20),

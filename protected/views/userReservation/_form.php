@@ -83,6 +83,11 @@
 		<?php
                 $this->widget('zii.widgets.jui.CJuiDatePicker',array(
                     'name'=>'travel_date',
+                    'model'=>$model,
+ // 'value'=>$model->issued_date,  // pre-fill the value
+ // instead of 'value' use 'attribute'
+ 'attribute'=>'travel_date',
+ // additional javascript options for the date picker plugin
                     // additional javascript options for the date picker plugin
                     'options'=>array(
                         'showAnim'=>'fold',
