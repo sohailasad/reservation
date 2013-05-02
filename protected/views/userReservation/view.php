@@ -1,7 +1,7 @@
 <?php
 /* @var $this ReservationController */
 /* @var $model Reservation */
-
+//die ('jdjdjjd');
 $this->breadcrumbs=array(
 	'Reservations'=>array('index'),
 	$model->id,
