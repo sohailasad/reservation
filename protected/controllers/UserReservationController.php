@@ -43,13 +43,18 @@ class UserReservationController extends Controller
         /**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
+	 */	
+
+    /**
+	 * Lists all models.
 	 */
-	
-    public function actionIndex()
-    {
-       $data = 'You must increase your experience';
-        $this->render('index',array('data'=>$data,'data2'=>'this is data2 pass from controller'));
-    }
+	public function actionIndex()
+	{
+		$dataProvider=new CActiveDataProvider('Reservation');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
     public function actionView($id)
 	{
 		$this->render('view',array(
@@ -89,6 +94,20 @@ class UserReservationController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
+	}
+        /**
+	 * Manages all models.
+	 */
+	public function actionAdmin()
+	{
+		$model=new Reservation('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Reservation']))
+			$model->attributes=$_GET['Reservation'];
+
+		$this->render('admin',array(
+			'model'=>$model,
+		));
 	}
 
 

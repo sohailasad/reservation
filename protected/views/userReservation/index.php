@@ -1,15 +1,22 @@
 <?php
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+/* @var $this ReservationController */
+/* @var $dataProvider CActiveDataProvider */
 
-echo $data;
-echo '<br>';
-echo 'hi how are you?';
+$this->breadcrumbs=array(
+	'Reservations',
+);
+
+$this->menu=array(
+	array('label'=>'Create Reservation', 'url'=>array('create')),
+	array('label'=>'Manage Reservation', 'url'=>array('admin')),
+);
 ?>
-<br>
-<?php
-echo $data2;
+
+<h1>Reservations</h1>
+
+<?php $this->widget('zii.widgets.CListView', array(
+	'dataProvider'=>$dataProvider,
+	'itemView'=>'_view',
+)); ?>
 
 
